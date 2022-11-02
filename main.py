@@ -1,13 +1,16 @@
 import cv2 as cv
 import numpy as np
 img = cv.imread("baboon.bmp",0)
+cv.imshow("duz",img)
+cv.waitKey()
+buyuk = np.max(img)
 w,h=img.shape
-arr = np.zeros(256)
 
 for i in range(w):
     for j in range(h):
-        a=img[i,j]
-        arr[a]=arr[a]+1
+        img[i,j] = buyuk-img[i,j]
 
-np.set_printoptions(suppress=True)
-print(*arr)
+cv.imshow("ters",img)
+cv.waitKey()
+#dizi gösterimi
+#print(img)
